@@ -4,6 +4,8 @@
 
 This library is .NET Core bindings for [GStreamer](https://gstreamer.freedesktop.org/) made on top of the original [gstreamer-sharp](https://gitlab.freedesktop.org/gstreamer/gstreamer-sharp) bindings. The library uses gstreamer-sharp sources as a submodule made from [gstreamer-sharp GitHub mirror](https://github.com/GStreamer/gstreamer-sharp).
 
+[![NuGet Badge](https://buildstats.info/nuget/gstreamer-sharp-netcore)](https://www.nuget.org/packages/gstreamer-sharp-netcore/)
+
 GStreamer is a library for constructing graphs of media-handling components.
 <details>
 <summary>What exactly can I do with GStreamer?</summary>
@@ -23,6 +25,11 @@ the core and base gstreamer libraries.
 * gstreamer core, with "base", "good" and "bad" plugins 1.14 or higher 
 
 **You need to have Gstreamer and its plugins binaries installed and and added to PATH variable!**
+
+## Quick Start
+1) Add [gstreamer-sharp-netcore](https://www.nuget.org/packages/gstreamer-sharp-netcore/) NuGet package to your .NET Core app. 
+2) Look how they do in in [Samples](#samples).
+
 
 ## Building 
 1) Clone the repository **recursively** (notice --recurse flag)
