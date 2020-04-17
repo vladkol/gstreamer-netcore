@@ -32,6 +32,14 @@ namespace Gst
         private static IntPtr MapAndLoad(string libraryName, Assembly assembly, DllImportSearchPath? dllImportSearchPath)
         {
             string mappedName = null;
+            if(mappingDocument == null)
+            {
+                using(var stream = assembly.GetManifestResourceStream("Gst.gstreamer_sharp.sources.gstreamer-sharp.dll.config"))
+                {
+                    mappingDocument = XElement.Load(stream);
+                }
+            }
+
             mappedName = MapLibraryName(assembly.Location, libraryName, out mappedName) ? mappedName : libraryName;
             return NativeLibrary.Load(mappedName, assembly, dllImportSearchPath);
         }
@@ -42,13 +50,7 @@ namespace Gst
             
             if (mappingDocument == null)
             {
-                string xmlPath = Path.Combine(Path.GetDirectoryName(assemblyLocation),
-                                                                        "gstreamer-sharp.dll.config");
-
-                if (!File.Exists(xmlPath))
-                    return false;
-
-                mappingDocument = XElement.Load(xmlPath);
+                return false;
             }
 
             string os = "linux";

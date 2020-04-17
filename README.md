@@ -24,7 +24,7 @@ the core and base gstreamer libraries.
 * .NET Core 3.1+ runtime for running the apps or .NET Core SDK 3.1+ for development 
 * gstreamer core, with "base", "good" and "bad" plugins 1.14 or higher 
 
-**You need to have Gstreamer and its plugins binaries installed and and added to PATH variable!**
+**You need to have Gstreamer and its plugins binaries [installed](https://gstreamer.freedesktop.org/documentation/installing/index.html) and added to PATH environment variable!**
 
 ## Quick Start
 1) Create a .NET Core project. 
