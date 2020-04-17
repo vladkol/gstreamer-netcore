@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Gst</RootNamespace>
+    <AssemblyName>gstreamer-sharp-netcore</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>108;114;168;169;618;659</NoWarn>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Title>GstSharp for .NET Core</Title>
+    <PackageDescription>GStreamer .NET Core Bindings</PackageDescription>
+    <Version>0.0.1</Version>
+    <Authors>vladkol</Authors>
+    <PackageLicenseExpression>LGPL-2.1-only</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/vladkol/gstreamer-netcore</RepositoryUrl>
+    <Copyright>Copyright 2020</Copyright>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>GStreamer GstSharp bindings</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GioSharp" Version="3.22.25.74" />
+    <PackageReference Include="GLibSharp" Version="3.22.25.74" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath=""/>
+    <Content Include="gstreamer-sharp\sources\gstreamer-sharp.dll.config" CopyToOutputDirectory="PreserveNewest">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="gstreamer-sharp\sources\custom\**\*.cs" />
+    <Compile Include="gstreamer-sharp\sources\generated\**\*.cs" Exclude="gstreamer-sharp\sources\generated\Gst\PadTemplate.cs"/>
+    <Compile Include="gst-netcore\**\*.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+[submodule "gstreamer-sharp"]
+	path = gstreamer-sharp
+	url = https://github.com/GStreamer/gstreamer-sharp

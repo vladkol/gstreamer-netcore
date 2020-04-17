@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:custom="clr-namespace:GStreamerPlayer"
+        x:Class="GStreamerPlayer.MainWindow"
+        Title="GStreamer Playback Sample">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <Menu DockPanel.Dock="Top" Name="MainMenu">
+                <MenuItem Header="File">
+                    <MenuItem Header="_Open File..." Name="MenuOpenFile"/>
+                    <Separator/>
+                    <MenuItem Header="_Exit" Name="MenuExit"/>
+                </MenuItem>
+                <MenuItem Header="URI" Name="MenuURI">
+                    <StackPanel Orientation="Horizontal">
+                        <AutoCompleteBox Name="urisOfChoice" Width="240"/>
+                        <Button Name="openUriButton" IsDefault="True" Content="Open" IsEnabled="False"/>
+                    </StackPanel>
+                </MenuItem>
+            </Menu>
+            <Grid>
+                <custom:GstFrameRenderer Name="frameImage" DockPanel.Dock="Top"/>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
