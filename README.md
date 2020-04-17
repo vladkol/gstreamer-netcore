@@ -19,8 +19,10 @@ under GSoC 2014 for the mono organization. gstreamer-sharp covers
 the core and base gstreamer libraries.
 
 ## Prerequisites
-* gstreamer core, with "base", "good" and "bad" plugins 1.14 or higher 
 * .NET Core 3.1+ runtime for running the apps or .NET Core SDK 3.1+ for development 
+* gstreamer core, with "base", "good" and "bad" plugins 1.14 or higher 
+
+**You need to have Gstreamer and its plugins binaries installed and and added to PATH variable!**
 
 ## Building 
 1) Clone the repository **recursively** (notice --recurse flag)
@@ -32,7 +34,7 @@ dotnet build
 ```
 
 ## Supported Platforms
-Everywhere GStreamer and .NET Core 3.1 runs. Tested on Windows 10, macOS Catalina and Ubuntu 18.04.
+Everywhere GStreamer and .NET Core 3.1 run. Tested on Windows 10, macOS Catalina and Ubuntu 18.04.
 
 ## Samples
 GStreamer-Sharp has [a plenty of samples](https://github.com/GStreamer/gstreamer-sharp/tree/master/samples), and we also included [a few](https://github.com/vladkol/gstreamer-netcore/samples): 

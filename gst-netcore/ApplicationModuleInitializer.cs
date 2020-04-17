@@ -43,7 +43,7 @@ namespace Gst
             if (mappingDocument == null)
             {
                 string xmlPath = Path.Combine(Path.GetDirectoryName(assemblyLocation),
-                    Path.GetFileNameWithoutExtension(assemblyLocation) + ".dll.config");
+                                                                        "gstreamer-sharp.dll.config");
 
                 if (!File.Exists(xmlPath))
                     return false;
