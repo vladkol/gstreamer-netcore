@@ -12,7 +12,7 @@
   <PropertyGroup>
     <Title>GstSharp for .NET Core</Title>
     <PackageDescription>GStreamer .NET Core Bindings</PackageDescription>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <Authors>vladkol</Authors>
     <PackageLicenseExpression>LGPL-2.1-only</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/vladkol/gstreamer-netcore</RepositoryUrl>
@@ -30,6 +30,8 @@
     <Content Include="gstreamer-sharp\sources\gstreamer-sharp.dll.config" CopyToOutputDirectory="PreserveNewest">
       <Link>%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Pack>true</Pack>
+      <PackagePath>lib\netcoreapp3.1</PackagePath>
     </Content>
     <Compile Include="gstreamer-sharp\sources\custom\**\*.cs" />
     <Compile Include="gstreamer-sharp\sources\generated\**\*.cs" Exclude="gstreamer-sharp\sources\generated\Gst\PadTemplate.cs"/>
