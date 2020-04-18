@@ -12,7 +12,7 @@
   <PropertyGroup>
     <Title>GstSharp for .NET Core</Title>
     <PackageDescription>GStreamer .NET Core Bindings</PackageDescription>
-    <Version>0.0.7</Version>
+    <Version>0.0.8</Version>
     <Authors>vladkol</Authors>
     <PackageLicenseExpression>LGPL-2.1-only</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/vladkol/gstreamer-netcore</RepositoryUrl>

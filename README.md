@@ -16,15 +16,21 @@ Applications can take advantage of advances in codec and filter technology trans
 </details>
 
 **GStreamer-Sharp** is a .NET/mono binding for Gstreamer
-generated from gobject-introspection data using the [bindinator](https://github.com/GLibSharp/bindinator). GStreamer-sharp currently wraps the API exposed by Gstreamer 1.16 and is compatible with newer gstreamer versions. It was developed
+generated from gobject-introspection data using the [bindinator](https://github.com/GLibSharp/bindinator). GStreamer-sharp currently wraps the API exposed by Gstreamer 1.12 and is compatible with newer gstreamer versions. It was developed
 under GSoC 2014 for the mono organization. gstreamer-sharp covers
 the core and base gstreamer libraries.
 
 ## Prerequisites
 * .NET Core 3.1+ runtime for running the apps or .NET Core SDK 3.1+ for development 
-* gstreamer core, with "base", "good" and "bad" plugins 1.14 or higher 
+* gstreamer core with "base" and "good" plugins 1.14 or higher (you may need "libav" wrapper or "bad"/"ugly" plugins for some features). 
+[What is that?](https://gstreamer.freedesktop.org/documentation/additional/splitup.html)
 
 **You need to have Gstreamer and its plugins binaries [installed](https://gstreamer.freedesktop.org/documentation/installing/index.html) and added to PATH environment variable!**
+* [Installing GStreamer on Ubuntu](https://gstreamer.freedesktop.org/documentation/installing/on-linux.html#install-gstreamer-on-ubuntu-or-debian)
+* [Installing GStreamer on macOS](https://gstreamer.freedesktop.org/documentation/installing/on-mac-osx.html) (Homebrew works as well)
+* [Installing GStreamer on Windows](https://gstreamer.freedesktop.org/documentation/installing/on-windows.html) 
+
+On Windows, gstreamer-sharp works only if you installed a MiniGW build (We tested with [gstreamer-1.0-mingw-x86_64-1.16.2](gstreamer-1.0-mingw-x86_64-1.16.2.msi)). You may also need to create GST_PLUGIN_PATH environment variable pointing to %GSTREAMER_1_0_ROOT_X86_64%\lib\gstreamer-1.0 (C:\gstreamer\1.0\x86_64\lib\gstreamer-1.0).
 
 ## Quick Start
 1) Create a .NET Core project. 

@@ -41,7 +41,23 @@ namespace Gst
             }
 
             mappedName = MapLibraryName(assembly.Location, libraryName, out mappedName) ? mappedName : libraryName;
-            return NativeLibrary.Load(mappedName, assembly, dllImportSearchPath);
+
+            IntPtr handle = IntPtr.Zero;
+            if(!NativeLibrary.TryLoad(mappedName, assembly, dllImportSearchPath, out handle))
+            {
+                if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    if(mappedName.StartsWith("lib", true, null))
+                    {
+                        NativeLibrary.TryLoad(mappedName.Substring(3), assembly, dllImportSearchPath, out handle);
+                    }
+                    else
+                    {
+                        NativeLibrary.TryLoad($"lib{mappedName}", assembly, dllImportSearchPath, out handle);
+                    }
+                }
+            }
+            return handle;
         }
 
         private static bool MapLibraryName(string assemblyLocation, string originalLibName, out string mappedLibName)

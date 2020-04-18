@@ -9,7 +9,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="GLibSharp" Version="3.22.25.74" />
-    <!--<PackageReference Include="gstreamer-sharp-netcore" Version="0.0.7" />-->
+    <!--<PackageReference Include="gstreamer-sharp-netcore" Version="0.0.8" />-->
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.9.7" />
