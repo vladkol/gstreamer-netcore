@@ -168,7 +168,14 @@ namespace GStreamerPlayer
             if(files != null && files.Length > 0)
             {
                 var file = files[0];
-                Play($"file://{file}");
+                if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows))
+                {
+                    Play($"file:/{file.Replace('\\', '/')}");
+                }
+                else
+                {
+                    Play($"file://{file}");
+                }
             }
         }
 
