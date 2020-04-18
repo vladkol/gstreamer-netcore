@@ -102,7 +102,7 @@ Any operating system and environment that GStreamer and .NET Core 3.1 can run on
 
 ## Samples
 GStreamer-Sharp has [a plenty of samples](https://github.com/GStreamer/gstreamer-sharp/tree/master/samples), and we also included [a few](samples): 
-* [Console app](samples/ConsoleSample) with demostrating different audio and video playback scenarios 
+* [Console app](samples/ConsoleSample) demostrating different audio and video playback scenarios 
 * Rudimentary [video player](samples/AvaloniaPlayer) made with [Avalonia UI](https://github.com/AvaloniaUI/Avalonia)
 
 ## License 
