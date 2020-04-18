@@ -12,6 +12,7 @@ GStreamer is a library for constructing graphs of media-handling components.
 GStreamer supports a range of scenarios from simple audio and video playback and streaming to complex audio (mixing) and video (non-linear editing) processing.
 
 Applications can take advantage of advances in codec and filter technology transparently. Developers can add new codecs and filters by writing a simple plugin with a clean, generic interface. 
+
 [Even more details](https://gstreamer.freedesktop.org/features/index.html)
 </details>
 
@@ -29,15 +30,26 @@ the core and base gstreamer libraries.
 * [Installing GStreamer on Ubuntu](https://gstreamer.freedesktop.org/documentation/installing/on-linux.html#install-gstreamer-on-ubuntu-or-debian)
 * [Installing GStreamer on macOS](https://gstreamer.freedesktop.org/documentation/installing/on-mac-osx.html) (Homebrew works as well)
 * [Installing GStreamer on Windows](https://gstreamer.freedesktop.org/documentation/installing/on-windows.html) 
+<details>
+<summary>Some Windows-speficic tips</summary>
+On Windows, gstreamer-sharp works only if you installed a MiniGW build. 
 
-On Windows, gstreamer-sharp works only if you installed a MiniGW build (We tested with [gstreamer-1.0-mingw-x86_64-1.16.2](gstreamer-1.0-mingw-x86_64-1.16.2.msi)). You may also need to create GST_PLUGIN_PATH environment variable pointing to %GSTREAMER_1_0_ROOT_X86_64%\lib\gstreamer-1.0 (C:\gstreamer\1.0\x86_64\lib\gstreamer-1.0).
+* We tested with [gstreamer-1.0-mingw-x86_64-1.16.2](https://gstreamer.freedesktop.org/data/pkg/windows/1.16.2/gstreamer-1.0-mingw-x86_64-1.16.2.msi). 
+
+When installing GStreamer on Windows, in addition to default components, select *"Gstreamer 1.0 libav wrapper"*. 
+
+You may also need to create **GST_PLUGIN_PATH** environment variable pointing to %GSTREAMER_1_0_ROOT_X86_64%\lib\gstreamer-1.0 (C:\gstreamer\1.0\x86_64\lib\gstreamer-1.0). 
+</details>
 
 ## Quick Start
-1) Create a .NET Core project. 
+1) Create a .NET Core project. You need one for .NET Core 3.1 or above.
 2) Add [gstreamer-sharp-netcore](https://www.nuget.org/packages/gstreamer-sharp-netcore/) NuGet package to your .NET Core app. 
-3) Look how they do in in [Samples](#samples).
+```
+dotnet add package gstreamer-sharp-netcore
+```
 
-A very minimal app ([BasicTutoria1](https://github.com/GStreamer/gstreamer-sharp/blob/master/samples/BasicTutorial1.cs)):
+3) Here is a very minimal app ([BasicTutoria1](https://github.com/GStreamer/gstreamer-sharp/blob/master/samples/BasicTutorial1.cs)). You may also look at how they do it in more [Samples](#samples).
+
 ```cs
 using System;
 using Gst; 
@@ -79,7 +91,7 @@ dotnet build
 ```
 
 ## Supported Platforms
-Everywhere GStreamer and .NET Core 3.1 run. Tested on Windows 10, macOS Catalina and Ubuntu 18.04.
+Any operating system and environment that GStreamer and .NET Core 3.1 can run on. We tested on Windows 10 1909, macOS Catalina and Ubuntu 18.04. 
 
 ## Samples
 GStreamer-Sharp has [a plenty of samples](https://github.com/GStreamer/gstreamer-sharp/tree/master/samples), and we also included [a few](samples): 
