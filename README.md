@@ -42,7 +42,14 @@ You may also need to create **GST_PLUGIN_PATH** environment variable pointing to
 </details>
 
 ## Quick Start
-1) Create a .NET Core project. You need one for .NET Core 3.1 or above.
+1) Create a .NET Core project. You need one for [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) or above. 
+```
+dotnet new console
+```
+*If making a class library, make sure it targets .NET Core 3.1+*: 
+```
+dotnet new classlib -f netcoreapp3.1  
+```
 2) Add [gstreamer-sharp-netcore](https://www.nuget.org/packages/gstreamer-sharp-netcore/) NuGet package to your .NET Core app. 
 ```
 dotnet add package gstreamer-sharp-netcore
