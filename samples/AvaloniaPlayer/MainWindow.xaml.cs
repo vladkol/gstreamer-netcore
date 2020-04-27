@@ -195,10 +195,12 @@ namespace GStreamerPlayer
             VideoSink = new AppSink("videoSink");
             VideoSink["caps"] = Caps.FromString("video/x-raw,format=RGBA");
 
-            VideoSink.Drop = true;
-            VideoSink.Sync = true;
-            VideoSink.Qos = true;
-            VideoSink.EnableLastSample = false;
+            VideoSink.Drop = true; // drop frames if cannot keep up
+            VideoSink.Sync = true; // synchronized playback 
+            VideoSink.MaxLateness = (1000 / 30) * 1000000; // maximum latency to achieve at least 30 fps
+            VideoSink.MaxBuffers = 1; // no buffering for video sink
+            VideoSink.Qos = true; // QoS for video sink 
+            VideoSink.EnableLastSample = false; // no need for last sample as we are pulling samples 
 
             Playbin["video-sink"] = VideoSink;
 

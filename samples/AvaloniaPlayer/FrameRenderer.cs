@@ -69,7 +69,7 @@ namespace GStreamerPlayer
             {
                 map.CopyTo(l.Address, l.RowBytes * l.Size.Height);
             }
-            VisualRoot.Renderer.AddDirty(this);
+            VisualRoot?.Renderer.AddDirty(this);
         }
 
     }
