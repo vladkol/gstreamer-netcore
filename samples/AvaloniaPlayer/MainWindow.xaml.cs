@@ -17,7 +17,7 @@ namespace GStreamerPlayer
     public class MainWindow : Window
     {
 #region Runtime fields 
-        private const int maxFPS = 60;
+        private const int maxFPS = 100;
         private Avalonia.Rendering.DefaultRenderTimer renderTimer = null;
         private long renderLock = 0;
 #endregion
@@ -49,10 +49,10 @@ namespace GStreamerPlayer
 #if DEBUG
             this.AttachDevTools();
 #endif
-            InitilaizeControls();
+            InitializeControls();
         }
 
-        private void InitilaizeControls()
+        private void InitializeControls()
         {
             frameImage = this.FindControl<GstFrameRenderer>("frameImage");
             mainMenu = this.FindControl<Menu>("MainMenu");
@@ -194,10 +194,11 @@ namespace GStreamerPlayer
 
             VideoSink = new AppSink("videoSink");
             VideoSink["caps"] = Caps.FromString("video/x-raw,format=RGBA");
+
             VideoSink.Drop = true;
             VideoSink.Sync = true;
             VideoSink.Qos = true;
-            VideoSink.EnableLastSample = true;
+            VideoSink.EnableLastSample = false;
 
             Playbin["video-sink"] = VideoSink;
 

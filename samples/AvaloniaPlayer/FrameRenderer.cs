@@ -69,14 +69,7 @@ namespace GStreamerPlayer
             {
                 map.CopyTo(l.Address, l.RowBytes * l.Size.Height);
             }
-            if(Dispatcher.UIThread.CheckAccess())
-            {
-                InvalidateVisual();
-            }
-            else
-            {
-                Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Render);
-            }
+            VisualRoot.Renderer.AddDirty(this);
         }
 
     }
