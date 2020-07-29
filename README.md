@@ -105,6 +105,8 @@ GStreamer-Sharp has [a plenty of samples](https://github.com/GStreamer/gstreamer
 * [Console app](samples/ConsoleSample) demostrating different audio and video playback scenarios 
 * Rudimentary [video player](samples/AvaloniaPlayer) made with [Avalonia UI](https://github.com/AvaloniaUI/Avalonia)
 
+* [GStreamer video processing pipeline](https://github.com/there-was-a-face/1-GStreamer-video), GStreamer video processing pipeline with raw sample handling, for an RTSP stream, web camera, or pretty much any GStreamer pipeline. If you want to create a real-time machine learning pipeline, it's your starting point.
+
 ## License 
 gstreamer-sharp is licensed under the [LGPL 2.1](https://www.gnu.org/licenses/lgpl-2.1.html), same as many parts of GStreamer and gstreamer-sharp.
 
