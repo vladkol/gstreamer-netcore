@@ -38,6 +38,8 @@ On Windows, gstreamer-sharp works only if you installed a MiniGW build.
 
 When installing GStreamer on Windows, in addition to default components, select *"Gstreamer 1.0 libav wrapper"*. 
 
+%GSTREAMER_1_0_ROOT_X86_64%\bin (C:\gstreamer\1.0\x86_64\bin) must be added to **PATH** environment variable.
+
 You may also need to create **GST_PLUGIN_PATH** environment variable pointing to %GSTREAMER_1_0_ROOT_X86_64%\lib\gstreamer-1.0 (C:\gstreamer\1.0\x86_64\lib\gstreamer-1.0). 
 </details>
 
