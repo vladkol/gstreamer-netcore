@@ -34,9 +34,13 @@ the core and base gstreamer libraries.
 <summary>Some Windows-speficic tips</summary>
 On Windows, gstreamer-sharp works only if you installed a MiniGW build. 
 
+* It doesn't work with MSVC build (has 'msvc' in .msi file name). If using Chocolatey package for GStreamer, it currently installs an MSVC build which won't work with this library. 
+
 * We tested with [gstreamer-1.0-mingw-x86_64-1.16.2](https://gstreamer.freedesktop.org/data/pkg/windows/1.16.2/gstreamer-1.0-mingw-x86_64-1.16.2.msi). 
 
 When installing GStreamer on Windows, in addition to default components, select *"Gstreamer 1.0 libav wrapper"*. 
+
+%GSTREAMER_1_0_ROOT_X86_64%\bin (C:\gstreamer\1.0\x86_64\bin) must be added to **PATH** environment variable.
 
 You may also need to create **GST_PLUGIN_PATH** environment variable pointing to %GSTREAMER_1_0_ROOT_X86_64%\lib\gstreamer-1.0 (C:\gstreamer\1.0\x86_64\lib\gstreamer-1.0). 
 </details>
