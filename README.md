@@ -30,8 +30,8 @@ the core and base gstreamer libraries.
 * [Installing GStreamer on Ubuntu](https://gstreamer.freedesktop.org/documentation/installing/on-linux.html#install-gstreamer-on-ubuntu-or-debian)
 * [Installing GStreamer on macOS](https://gstreamer.freedesktop.org/documentation/installing/on-mac-osx.html) (Homebrew works as well)
 * [Installing GStreamer on Windows](https://gstreamer.freedesktop.org/documentation/installing/on-windows.html) 
-<details>
-<summary>Some Windows-speficic tips</summary>
+
+### If you develop on Windows, please read this
 On Windows, gstreamer-sharp works only if you installed a MiniGW build. 
 
 * It doesn't work with MSVC build (has 'msvc' in .msi file name). If using Chocolatey package for GStreamer, it currently installs an MSVC build which won't work with this library. 
@@ -43,7 +43,6 @@ When installing GStreamer on Windows, in addition to default components, select 
 %GSTREAMER_1_0_ROOT_X86_64%\bin (C:\gstreamer\1.0\x86_64\bin) must be added to **PATH** environment variable.
 
 You may also need to create **GST_PLUGIN_PATH** environment variable pointing to %GSTREAMER_1_0_ROOT_X86_64%\lib\gstreamer-1.0 (C:\gstreamer\1.0\x86_64\lib\gstreamer-1.0). 
-</details>
 
 ## Quick Start
 1) Create a .NET Core project. You need one for [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) or above. 
