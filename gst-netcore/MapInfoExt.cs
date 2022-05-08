@@ -28,7 +28,7 @@ namespace Gst
     using System;
     using System.Runtime.InteropServices;
 
-#if NETCOREAPP3_0 || NETCOREAPP3_1 || NET5_0
+#if NETCOREAPP3_0 || NETCOREAPP3_1 || NET5_0_OR_GREATER
     partial struct MapInfo
     {
         public unsafe void CopyTo(IntPtr destination, long destinationSizeInBytes)
